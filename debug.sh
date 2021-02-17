@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo openocd -s openocd-spi/tcl -f debug.cfg
+sudo openocd -f debug.cfg
