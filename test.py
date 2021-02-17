@@ -24,22 +24,19 @@ def startRttServer():
 
 x = threading.Thread(target = startRttServer)
 x.start()
+try:
+    key_pin = LED(6)
+except Exception as e:
+   print(e)
 while(True):
     time.sleep(1)
-    case = input("Run Test Case")
-    if case.find("Unlock"):
-        try:
-            pin = LED(6)
-            pin.on()
-            print("Unlocking")
-        except:
-            pass
-    elif case.find("Lock"):
-        try:
-            pin = LED(6)
-            pin.off()
-            print("Locking")
-        except:
-            pass
+    case = int(input("Run Test Case: "))
+    if case == 1:
+        key_pin.on()
+        print("Unlocking")
+    elif case == 2:
+        key_pin.off()
+        print("Locking")
     else:
         pass
+    case = 0
