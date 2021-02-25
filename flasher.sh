@@ -1,5 +1,4 @@
 #!/bin/bash
 
-sudo openocd -s openocd-spi/tcl \
-	-f openocd.cfg	\
+sudo openocd -f openocd.cfg	\
 	-f flash.ocd
